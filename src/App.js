@@ -5,25 +5,29 @@ import { GridSizeForm, Grid, Controllers } from "./components";
 import * as _ from "./helpers";
 
 function App() {
-  const [rows, setRows] = useState(25);
-  const [cols, setCols] = useState(rows);
-  const [displayGrid, setDisplayGrid] = useState(_.create_grid(rows));
+  // to determine size of grid
+  const [rows, setRows] = useState(50);
+  const [cols, setCols] = useState(125);
+  const [displayGrid, setDisplayGrid] = useState(_.create_grid(rows, cols));
 
   useEffect(() => {
+    // grabs the grid, and updates the grid size if the grid, rows or cols have changed
     let grid = document.querySelector(".grid");
-    console.log("grid: ", grid);
     if (grid != null) {
       grid.style.setProperty("--rows", rows);
       grid.style.setProperty("--cols", cols);
     }
   }, [displayGrid, rows, cols]);
 
+  /**
+   * Resets the game grid to match the selected value
+   * @param {object} e - the event of change in the grid size form
+   */
   function handleChange(e) {
     let grid_size = Number(e.target.value);
     _.change_grid_size(grid_size, setRows, setCols, setDisplayGrid);
   }
 
-  console.log(rows, cols);
   return (
     <div className="App">
       <h1>Game of Life</h1>

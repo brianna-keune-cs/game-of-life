@@ -1,4 +1,12 @@
 import { create_grid } from "./index";
+
+/**
+ * Updates the grid size displayed on UI
+ * @param {int} grid_size - integer you want the row < 51 and cols the grid to be
+ * @param {function} setRows - setRows function to update state
+ * @param {function} setCols - setCols function to update state
+ * @param {function} setDisplayGrid - function to update grid state
+ */
 export default function change_grid_size(
   grid_size,
   setRows,
