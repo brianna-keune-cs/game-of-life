@@ -24,7 +24,7 @@
   border: solid 1px darkslategray;
 }
 .cell.alive {
-  background: lime;
+  background: var(--cell-color, #00ff00);
 }
 
 button {
