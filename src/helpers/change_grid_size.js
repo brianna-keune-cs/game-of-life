@@ -8,11 +8,12 @@ import { create_grid } from "./index";
  * @param {function} setDisplayGrid - function to update grid state
  */
 export default function change_grid_size(
-  grid_size,
+  grid_size_input,
   setRows,
   setCols,
   setDisplayGrid
 ) {
+  let grid_size = Number(grid_size_input)
   if (grid_size < 50) {
     setRows(grid_size);
     setCols(grid_size);

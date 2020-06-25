@@ -5,8 +5,8 @@
  * @param {int} cols
  * returns {array} a matrix grid to be used
  */
-export default function create_grid(rows, cols=rows) {
-    return Array(rows)
-      .fill()
-      .map(() => Array(cols).fill(false));
-  }
+export default function create_grid(rows, cols = rows) {
+  return Array(rows)
+    .fill()
+    .map(() => Array(cols).fill(0));
+}
