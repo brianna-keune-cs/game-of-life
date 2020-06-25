@@ -4,6 +4,7 @@ import Controllers from "./Controllers.js";
 import GenerationCounter from "./GenerationCounter.js";
 import CellColorForm from "./CellColorForm.js";
 import GOLRules from "./GOLRules.js";
+import Modal from "./Modal.js";
 
 export {
   GridSizeForm,
@@ -12,4 +13,5 @@ export {
   GenerationCounter,
   CellColorForm,
   GOLRules,
+  Modal,
 };
