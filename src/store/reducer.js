@@ -11,7 +11,7 @@ export const initialState = {
   running: false,
   rows: startingRows,
   cols: startingCols,
-  cellColor: "#00ff00",
+  cellColor: "#b3a1c0",
 };
 
 export const gridReducer = (state = initialState, action) => {
