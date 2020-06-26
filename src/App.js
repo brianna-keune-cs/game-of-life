@@ -15,10 +15,10 @@ import { initialState, gridReducer } from "./store/reducer.js";
 
 function App() {
   const [state, dispatch] = useReducer(gridReducer, initialState);
-  const [showingRules, setShowingRules] = useState(false);
+  const [showingModal, setshowingModal] = useState(false);
 
   function showModal() {
-    setShowingRules(!showingRules);
+    setshowingModal(!showingModal);
   }
 
   useEffect(() => {
@@ -66,6 +66,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* todo make nav it's own component */}
       <nav>
         <ul>
           <li className="title">Game of Life</li>
@@ -94,7 +95,7 @@ function App() {
       </nav>
       <Modal
         handleClose={showModal}
-        showingRules={showingRules}
+        showing={showingModal}
         children={<GOLRules />}
       />
       <div className="before-grid">
@@ -106,8 +107,19 @@ function App() {
         <GridSizeForm handleChange={handleGridSizeChange} />
       </div>
 
-      <Grid grid={state.gridA} dispatch={dispatch} running={state.running} />
-      <Controllers state={state} dispatch={dispatch} />
+      <Grid
+        grid={state.gridA}
+        dispatch={dispatch}
+        running={state.running}
+        handleClose={showModal}
+        showing={showingModal}
+      />
+      <Controllers
+        state={state}
+        dispatch={dispatch}
+        handleClose={showModal}
+        showing={showingModal}
+      />
     </div>
   );
 }

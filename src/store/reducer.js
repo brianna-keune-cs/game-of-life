@@ -13,7 +13,7 @@ export const initialState = {
   rows: startingRows,
   cols: startingCols,
   cellColor: "#b3a1c0",
-  speed: 1200,
+  speed: 1800,
 };
 
 export const gridReducer = (state = initialState, action) => {
@@ -47,10 +47,11 @@ export const gridReducer = (state = initialState, action) => {
       };
     case "create_random":
       const seed = _.create_random_seed(state.rows, state.cols);
+      const seededStarterGrid = _.calc_next_gen(seed);
       return {
         ...state,
-        gridA: seed,
-        gridB: _.calc_next_gen(seed),
+        gridA: seededStarterGrid,
+        gridB: _.calc_next_gen(seededStarterGrid),
         generation: 0,
         running: false,
       };
@@ -105,7 +106,7 @@ export const gridReducer = (state = initialState, action) => {
         running: false,
       };
     case "update_speed":
-      if (state.speed === 200) return { ...state, speed: 1200 };
+      if (state.speed === 200) return { ...state, speed: 1800 };
       return { ...state, speed: state.speed - 400 };
 
     default:

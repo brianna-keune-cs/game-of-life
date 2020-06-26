@@ -1,15 +1,26 @@
 import React from "react";
+import Modal from "./index";
 
-export default function Grid({ grid, dispatch, running }) {
+export default function Grid({
+  grid,
+  dispatch,
+  running,
+  handleClose,
+  showing,
+}) {
   // useEffect(() => {}, [grid]);
   function toggleCellOn(row_index, col_index) {
-    if (running) return;
-    dispatch({ type: "stop" });
+    if (running) {
+      alert("please turn off simulation\nbefore trying to toggle cells");
+      return;
+    }
     dispatch({ type: "toggle_cell_on", payload: { row_index, col_index } });
   }
   function toggleCellOff(row_idx, col_idx) {
-    if (running) return;
-    dispatch({ type: "stop" });
+    if (running) {
+      alert("please turn off simulation\nbefore trying to toggle cells");
+      return;
+    }
     dispatch({ type: "toggle_cell_off", payload: { row_idx, col_idx } });
   }
   return (
