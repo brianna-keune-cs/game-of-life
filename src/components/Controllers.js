@@ -21,6 +21,9 @@ export default function Controllers({ state, dispatch }) {
   function step() {
     dispatch({ type: "step" });
   }
+  function changeSpeed() {
+    dispatch({ type: "update_speed" });
+  }
   return (
     <div className="controller-container">
       <button onClick={randomize}>Random Seed</button>
@@ -28,6 +31,7 @@ export default function Controllers({ state, dispatch }) {
       <button onClick={state.running ? stop : start}>
         {state.running ? "Stop" : "Start"}
       </button>
+      <button onClick={changeSpeed}>Speed: {state.speed}ms</button>
       <button onClick={clear}>Clear</button>
     </div>
   );

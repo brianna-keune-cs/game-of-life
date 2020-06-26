@@ -45,7 +45,7 @@ function App() {
     if (!state.running) return;
     setTimeout(() => {
       dispatch({ type: "step" });
-    }, 200);
+    }, state.speed);
   }, [state]);
 
   /**

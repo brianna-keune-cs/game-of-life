@@ -28,7 +28,7 @@ The main entry point of your application should house the visualization of this 
                 Repeat until simulation stopped
     [x] Breaks down above steps into appropriate sub-tasks implemented with helper functions to improve readability
     [x] Uses double buffering to update grid with next generation.
-    [] Does something well-documented with the edge of the grid. (e.g. wrap around to the far side--most fun!--or assumes all edge cells are permanently dead.)
+    [x] Does something well-documented with the edge of the grid. (e.g. wrap around to the far side--most fun!--or assumes all edge cells are permanently dead.)
 
 ## Custom Features
 
@@ -37,7 +37,7 @@ Implement at least 3 of the following features:
     [ ] Create a few sample cell configurations that users can load and run
     [x] Add an option that creates a random cell configuration that users can run
     [x] Add additional cell properties, like color or size, and incorporate them into your visualization
-    [ ] Allow users to specify the speed of the simulation
+    [x] Allow users to specify the speed of the simulation
     [x] Provide functionality to manually step through the simulation one generation at a time, as opposed to animating automatically
     [x] Allow users to change the dimension of the grid being displayed
     [ ] Given a specific generation, calculate the configuration of cells at that point in time, and jump to that state, bypassing animation (i.e. skip ahead n generations).

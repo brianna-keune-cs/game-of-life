@@ -20,12 +20,14 @@ export default function calc_neighbours(grid, lat, lon) {
     let row = lat + coords[0];
     let col = lon + coords[1];
 
-    // checks the bounds of the grid so we do not leave it...
-    // may update so that it can move to the far side of the grid
-    if (row >= 1 && row < row_length && col >= 1 && col < col_length) {
-      let cell = grid[row][col];
-      if (cell === 1) neighbour_count += 1;
-    }
+    // calculates edge cells, as if their opposite is their neighbour
+    if (row < 0) row = row_length - 1;
+    if (row === row_length) row = 0;
+    if (col < 0) col = col_length - 1;
+    if (col === col_length) col = 0;
+    let cell = grid[row][col];
+
+    neighbour_count += cell;
   });
   return neighbour_count;
 }

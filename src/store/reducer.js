@@ -2,7 +2,8 @@ import * as _ from "../helpers";
 
 let startingRows = 50;
 let startingCols = 125;
-let displayGrid = _.create_random_seed(startingRows, startingCols);
+const starterSeed = _.create_random_seed(startingRows, startingCols);
+let displayGrid = _.calc_next_gen(starterSeed);
 
 export const initialState = {
   gridA: displayGrid,
@@ -12,6 +13,7 @@ export const initialState = {
   rows: startingRows,
   cols: startingCols,
   cellColor: "#b3a1c0",
+  speed: 1200,
 };
 
 export const gridReducer = (state = initialState, action) => {
@@ -102,6 +104,10 @@ export const gridReducer = (state = initialState, action) => {
         gridB: _.calc_next_gen(a_new_grid),
         running: false,
       };
+    case "update_speed":
+      if (state.speed === 200) return { ...state, speed: 1200 };
+      return { ...state, speed: state.speed - 400 };
+
     default:
       return state;
   }
