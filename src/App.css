@@ -1,0 +1,161 @@
+.App {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(226, 221, 221);
+  background: rgb(63, 62, 62);
+}
+nav ul {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(50, 189, 189);
+}
+
+nav .title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+nav a,
+#rules {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(50, 189, 189);
+}
+a:hover,
+#rules:hover {
+  color: #b3a1c0;
+}
+
+.before-grid {
+  display: flex;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  margin: 1rem;
+}
+
+p {
+  margin-top: 10px;
+}
+p span {
+  margin-left: 10px;
+  color: var(--cell-color);
+}
+
+/* source: https://levelup.gitconnected.com/css-only-custom-styled-select-99b1b022bfbf */
+select,
+input {
+  max-width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: var(--cell-color);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-left: 10px;
+} /* For IE <= 11 */
+select::-ms-expand {
+  display: none;
+}
+
+input {
+  background: #4d565a;
+  vertical-align: middle;
+}
+
+select:hover,
+input:hover {
+  background-color: rgb(13, 117, 117);
+}
+
+.grid {
+  justify-content: center;
+  color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 25), var(--cell-size, 15px));
+  grid-template-rows: repeat(var(--rows, 25), var(--cell-size, 15px));
+}
+
+.cell {
+  width: 15px;
+  height: 15px;
+  border: solid 1px #637279;
+}
+.cell.alive {
+  background: var(--cell-color);
+}
+
+.controller-container {
+  margin: auto;
+  max-width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  margin: 2% auto;
+  padding: 1em;
+  min-width: 15%;
+  max-width: 30%;
+  background: rgb(13, 117, 117);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+button:hover {
+  background: var(--cell-color);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-main {
+  position: fixed;
+  background: rgb(233, 231, 231);
+  min-width: 80%;
+  max-width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+}
+.modal-main button {
+  margin: auto;
+  min-width: 10%;
+  height: 50px;
+}
+.modal-main button:hover {
+  background: #b3a1c0;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.rules-container {
+  color: black;
+  margin: 2rem auto;
+}
